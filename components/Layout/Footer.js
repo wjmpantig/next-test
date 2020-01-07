@@ -2,15 +2,22 @@ import Link from 'next/link';
 
 const Footer = () => (
   <footer>
-      <div>
-        <Link href="/">
-        <a>Home</a>
-        </Link>
-        <Link href="/vouchers">
-        <a>Vouchers</a>
-        </Link>
-        <a href="/blog">Blog</a>
-      </div>
+      <h3>footer</h3>
+      <ul>
+        <li>
+            <Link href="/">
+            <a>Home</a>
+            </Link>
+        </li>
+        <li>
+            <Link href="/vouchers">
+            <a>Vouchers</a>
+            </Link>
+        </li>
+        <li>
+            <a href="/blog">Blog</a>
+        </li>
+      </ul>
       <div>
         © 2020 Scrambled Eggs Pte Ltd.
       </div>

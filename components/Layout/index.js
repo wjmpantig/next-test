@@ -1,13 +1,13 @@
 import Header from './Header';
 import Footer from './Footer';
 
-const withLayout = (Content) => () => (
+const Layout = ({ children }) => (
     <div>
         <Header />
         <main>
-            <Content />
+            {children}
         </main>
         <Footer />
     </div>
 );
-export default withLayout;
+export default Layout;

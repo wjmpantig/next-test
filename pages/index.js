@@ -1,4 +1,3 @@
-import withLayout from '../components/Layout';
 
 const Index = () => (
     <>
@@ -6,4 +5,4 @@ const Index = () => (
         <p>some content</p>
     </>
 );
-export default withLayout(Index);
+export default Index;

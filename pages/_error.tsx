@@ -1,10 +1,11 @@
-import React, { FunctionComponent } from 'react'
+import React from 'react'
+import { NextPage, NextPageContext } from 'next';
 
 type ErrorProps = {
-  statusCode: number,
-};
+  statusCode: number
+}
 
-const Error: FunctionComponent<ErrorProps> = ({ statusCode }) =>{
+const Error:NextPage<ErrorProps> = ({ statusCode }) =>{
   return (
     <p>
       {statusCode
@@ -14,7 +15,7 @@ const Error: FunctionComponent<ErrorProps> = ({ statusCode }) =>{
   )
 }
 
-Error.getInitialProps = ({ res, err }) => {
+Error.getInitialProps = ({ res, err } :NextPageContext ) => {
   const statusCode = res ? res.statusCode : err ? err.statusCode : 404
   return { statusCode }
 }

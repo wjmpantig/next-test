@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import Link from 'next/link';
 
-const Header = () => (
+const Header:FunctionComponent = () => (
   <div>
     <Link href="/">
       <a>Home</a>

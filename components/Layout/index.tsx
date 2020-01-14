@@ -1,7 +1,11 @@
+import React, { FunctionComponent, ReactElement } from 'react';
 import Header from './Header';
 import Footer from './Footer';
+type LayoutProps = {
+    children: ReactElement
+};
 
-const Layout = ({ children }) => (
+const Layout:FunctionComponent<LayoutProps> = ({ children }) => (
     <div>
         <Header />
         <main>

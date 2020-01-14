@@ -6,7 +6,7 @@ import { GET_OFFER_BY_SLUG } from '../apollo/offer';
 type VoucherProps = {
   slug: string,
   id: number
-}
+};
 
 const Voucher:FunctionComponent<VoucherProps> = ({ slug, id}) =>{
   const { error, loading, data } = useQuery(GET_OFFER_BY_SLUG, { variables: { slug }, fetchPolicy: 'cache-and-network' });

@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 
-function Error({ statusCode }) {
+type ErrorProps = {
+  statusCode: number,
+};
+
+const Error: FunctionComponent<ErrorProps> = ({ statusCode }) =>{
   return (
     <p>
       {statusCode

@@ -1,7 +1,8 @@
-const dotenv = require('dotenv');
-const express = require('express');
-const url = require('url');
-const next = require('next');
+import * as dotenv from 'dotenv';
+import express from 'express';
+import * as url from 'url';
+import next from 'next';
+
 dotenv.config();
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
@@ -20,8 +21,11 @@ app.prepare().then(() => {
   
   expressApp.get(voucherRegex, (req, res) => {
     const { pathname } = url.parse(req.url);
-    const [, slug, id] = pathname.match(voucherRegex);
-    return app.render(req, res, '/voucher', { slug, id});
+    const matches = pathname?.match(voucherRegex);
+    if (matches) {
+      const [, slug, id] = matches;
+      return app.render(req, res, '/voucher', { slug, id});
+    }
   });
 
   // fallback all request to next request handler

@@ -3,23 +3,28 @@ const webpack = require("webpack");
 require("dotenv").config();
 
 module.exports = {
-  webpack: config => {
+  webpack: (config, options) => {
     // Fixes npm packages that depend on `fs` module
-    // config.node = {
-    //   fs: 'empty'
-    // }
+    config.node = {
+      fs: 'empty'
+    }
     /**
      * Returns environment variables as an object
      */
     const env = Object.keys(process.env).reduce((acc, curr) => {
-             acc[`process.env.${curr}`] = JSON.stringify(process.env[curr]);
-             return acc;
+      acc[`process.env.${curr}`] = JSON.stringify(process.env[curr]);
+      return acc;
    }, {});
 
     /** Allows you to create global constants which can be configured
     * at compile time, which in our case is our environment variables
     */
     config.plugins.push(new webpack.DefinePlugin(env));
-    return config
+    config.module.rules.push({
+        test: /\.mjs$/,
+        include: /node_modules/,
+        type: "javascript/auto",
+    });
+    return config;
   }
 }

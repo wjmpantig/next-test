@@ -23,7 +23,6 @@ const Vouchers:FunctionComponent = () => {
   const filteredOffersWithVouchers = offersWithVouchers
     && offersWithVouchers.filter((offer: Offer) => offer && offer.vouchers
       && offer.vouchers.length && offer.vouchers[0] !== null);
-      console.log(filteredOffersWithVouchers)
   return (
     <div>
       <h1>vouchers</h1>

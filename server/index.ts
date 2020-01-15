@@ -30,7 +30,6 @@ app.prepare().then(() => {
 
   // fallback all request to next request handler
   expressApp.all('*', (req, res) => {
-    console.log(req.url)
     return handle(req, res);
   });
 

@@ -2,10 +2,8 @@
   "compilerOptions": {
     "target": "es5",
     "lib": [
-      "ES2017",
       "dom",
-      "dom.iterable",
-      "esnext"
+      "ES2017"
     ],
     "allowJs": true,
     "skipLibCheck": true,
@@ -21,9 +19,7 @@
     "sourceMap": true,
     "typeRoots": ["./node_modules/@types"]
   },
-  "exclude": [
-    "node_modules"
-  ],
+  "exclude": ["dist", ".next", "out", "next.config.js", "node_modules"],
   "include": [
     "next-env.d.ts",
     "**/*.ts",

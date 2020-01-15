@@ -2,6 +2,8 @@ import React, { FunctionComponent } from 'react';
 import Link from 'next/link';
 import { useQuery } from '@apollo/react-hooks';
 import { GET_VOUCHERS } from '../apollo/vouchers';
+import withApollo from '../apollo/with-apollo';
+
 type Voucher = {
   id: number,
   status: string,
@@ -41,4 +43,4 @@ const Vouchers:FunctionComponent = () => {
     </div>
   )
 }
-export default Vouchers;
+export default withApollo(Vouchers);

@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {FunctionComponent} from 'react';
 
-const Index = () => (
+const Index:FunctionComponent = () => (
     <>
         <h1>This is the homepage</h1>
         <p>some content</p>

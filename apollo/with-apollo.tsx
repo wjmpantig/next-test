@@ -1,5 +1,5 @@
+import React from 'react'
 import { NextPage, NextPageContext } from 'next'
-import React, { FunctionComponent } from 'react'
 import Head from 'next/head'
 import { ApolloProvider } from '@apollo/react-hooks'
 import { ApolloClient } from 'apollo-client'

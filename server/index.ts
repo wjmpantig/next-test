@@ -26,6 +26,7 @@ app.prepare().then(() => {
       const [, slug, id] = matches;
       return app.render(req, res, '/voucher', { slug, id});
     }
+    return app.render(req, res, '/voucher');
   });
 
   // fallback all request to next request handler

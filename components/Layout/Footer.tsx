@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-const Footer = () => (
+const Footer:React.FC = () => (
   <footer>
       <h3>footer</h3>
       <ul>
@@ -20,7 +20,7 @@ const Footer = () => (
         </li>
       </ul>
       <div>
-        © 2020 Scrambled Eggs Pte Ltd.
+        © 2020 Company name
       </div>
   </footer>
 );

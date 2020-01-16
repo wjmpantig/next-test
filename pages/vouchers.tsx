@@ -38,7 +38,12 @@ const Vouchers:FunctionComponent = () => {
             </Link>
           </li>
         )))
-      }
+        }
+        <li>
+          <Link href="/vouchers/test-123" >
+            <a>invalid slug test</a>
+          </Link>
+        </li>
       </ul>
     </div>
   )

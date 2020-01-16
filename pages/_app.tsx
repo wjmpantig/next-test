@@ -1,26 +1,16 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 import App from 'next/app';
-import { ApolloProvider } from '@apollo/react-hooks';
-import ApolloClient from 'apollo-client';
-import { InMemoryCache } from 'apollo-cache-inmemory';
-import withApollo from '../apollo/apollo-client';
 
 import Layout from '../components/Layout';
-
-type AppProps = {
-  apollo: ApolloClient<InMemoryCache>,
-};
-class MyApp extends App<AppProps> {
+class MyApp extends App {
   render() {
-    const { Component, pageProps, apollo } = this.props;
+    const { Component, pageProps } = this.props;
     return (
-      <ApolloProvider client={apollo}>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </ApolloProvider>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     );
   }
 }
 // Wraps all components in the tree with the data provider
-export default withApollo(MyApp);
+export default MyApp;

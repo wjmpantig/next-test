@@ -1,14 +1,15 @@
-import React from 'react'
-import { Error } from 'next';
+import React from 'react';
+import { NextPage, NextPageContext } from 'next';
 
-export default class extends Error {
-  render() {
-    return (
-      <p>
-        {statusCode
-          ? `An error ${statusCode} occurred on server`
-          : 'An error occurred on client'}
-      </p>
-    );
-  }
+interface ErrorPageProps {
+  statusCode: string | number
 }
+
+const Error:NextPage<ErrorPageProps> = ( { statusCode = 404 }) =>(
+  <p>
+    {statusCode
+      ? `An error ${statusCode} occurred on server`
+      : 'An error occurred on client'}
+  </p>
+);
+export default Error;
